@@ -1,0 +1,395 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "find_stylesheets",
+        "importPath": "kedro.framework.cli.utils",
+        "description": "kedro.framework.cli.utils",
+        "isExtraImport": true,
+        "detail": "kedro.framework.cli.utils",
+        "documentation": {}
+    },
+    {
+        "label": "__version__",
+        "importPath": "ml_kedro",
+        "description": "ml_kedro",
+        "isExtraImport": true,
+        "detail": "ml_kedro",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "find_pipelines",
+        "importPath": "kedro.framework.project",
+        "description": "kedro.framework.project",
+        "isExtraImport": true,
+        "detail": "kedro.framework.project",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "kedro.framework.project",
+        "description": "kedro.framework.project",
+        "isExtraImport": true,
+        "detail": "kedro.framework.project",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigLoader",
+        "importPath": "kedro.config",
+        "description": "kedro.config",
+        "isExtraImport": true,
+        "detail": "kedro.config",
+        "documentation": {}
+    },
+    {
+        "label": "KedroContext",
+        "importPath": "kedro.framework.context",
+        "description": "kedro.framework.context",
+        "isExtraImport": true,
+        "detail": "kedro.framework.context",
+        "documentation": {}
+    },
+    {
+        "label": "_create_hook_manager",
+        "importPath": "kedro.framework.hooks",
+        "description": "kedro.framework.hooks",
+        "isExtraImport": true,
+        "detail": "kedro.framework.hooks",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "remove_arrows_in_examples",
+        "kind": 2,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "def remove_arrows_in_examples(lines):\n    for i, line in enumerate(lines):\n        lines[i] = line.replace(\">>>\", \"\")\ndef autodoc_process_docstring(app, what, name, obj, options, lines):\n    remove_arrows_in_examples(lines)\ndef skip(app, what, name, obj, skip, options):\n    if name == \"__init__\":\n        return False\n    return skip\ndef setup(app):",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "autodoc_process_docstring",
+        "kind": 2,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "def autodoc_process_docstring(app, what, name, obj, options, lines):\n    remove_arrows_in_examples(lines)\ndef skip(app, what, name, obj, skip, options):\n    if name == \"__init__\":\n        return False\n    return skip\ndef setup(app):\n    app.connect(\"autodoc-process-docstring\", autodoc_process_docstring)\n    app.connect(\"autodoc-skip-member\", skip)\n    # add Kedro stylesheets",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "skip",
+        "kind": 2,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "def skip(app, what, name, obj, skip, options):\n    if name == \"__init__\":\n        return False\n    return skip\ndef setup(app):\n    app.connect(\"autodoc-process-docstring\", autodoc_process_docstring)\n    app.connect(\"autodoc-skip-member\", skip)\n    # add Kedro stylesheets\n    for stylesheet in find_stylesheets():\n        app.add_css_file(stylesheet)",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "kind": 2,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "def setup(app):\n    app.connect(\"autodoc-process-docstring\", autodoc_process_docstring)\n    app.connect(\"autodoc-skip-member\", skip)\n    # add Kedro stylesheets\n    for stylesheet in find_stylesheets():\n        app.add_css_file(stylesheet)",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "project",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "project = \"ml_kedro\"\nauthor = \"Kedro\"\n# The short X.Y version.\nversion = re.match(r\"^([0-9]+\\.[0-9]+).*\", release).group(1)\n# -- General configuration ---------------------------------------------------\n# If your documentation needs a minimal Sphinx version, state it here.\n#\n# needs_sphinx = '1.0'\n# Add any Sphinx extension module names here, as strings. They can be\n# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "author",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "author = \"Kedro\"\n# The short X.Y version.\nversion = re.match(r\"^([0-9]+\\.[0-9]+).*\", release).group(1)\n# -- General configuration ---------------------------------------------------\n# If your documentation needs a minimal Sphinx version, state it here.\n#\n# needs_sphinx = '1.0'\n# Add any Sphinx extension module names here, as strings. They can be\n# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom\n# ones.",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "version",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "version = re.match(r\"^([0-9]+\\.[0-9]+).*\", release).group(1)\n# -- General configuration ---------------------------------------------------\n# If your documentation needs a minimal Sphinx version, state it here.\n#\n# needs_sphinx = '1.0'\n# Add any Sphinx extension module names here, as strings. They can be\n# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom\n# ones.\nextensions = [\n    \"sphinx.ext.autodoc\",",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "extensions",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "extensions = [\n    \"sphinx.ext.autodoc\",\n    \"sphinx.ext.napoleon\",\n    \"sphinx_autodoc_typehints\",\n    \"sphinx.ext.doctest\",\n    \"sphinx.ext.todo\",\n    \"sphinx.ext.coverage\",\n    \"sphinx.ext.mathjax\",\n    \"sphinx.ext.ifconfig\",\n    \"sphinx.ext.viewcode\",",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "autosummary_generate",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "autosummary_generate = True\n# Add any paths that contain templates here, relative to this directory.\ntemplates_path = [\"_templates\"]\n# The suffix(es) of source filenames.\n# You can specify multiple suffix as a list of string:\n#\nsource_suffix = {\".rst\": \"restructuredtext\", \".md\": \"markdown\"}\n# The master toctree document.\nmaster_doc = \"index\"\n# The language for content autogenerated by Sphinx. Refer to documentation",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "templates_path",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "templates_path = [\"_templates\"]\n# The suffix(es) of source filenames.\n# You can specify multiple suffix as a list of string:\n#\nsource_suffix = {\".rst\": \"restructuredtext\", \".md\": \"markdown\"}\n# The master toctree document.\nmaster_doc = \"index\"\n# The language for content autogenerated by Sphinx. Refer to documentation\n# for a list of supported languages.\n#",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "source_suffix",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "source_suffix = {\".rst\": \"restructuredtext\", \".md\": \"markdown\"}\n# The master toctree document.\nmaster_doc = \"index\"\n# The language for content autogenerated by Sphinx. Refer to documentation\n# for a list of supported languages.\n#\n# This is also used if you do content translation via gettext catalogs.\n# Usually you set \"language\" from the command line for these cases.\nlanguage = None\n# List of patterns, relative to source directory, that match files and",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "master_doc",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "master_doc = \"index\"\n# The language for content autogenerated by Sphinx. Refer to documentation\n# for a list of supported languages.\n#\n# This is also used if you do content translation via gettext catalogs.\n# Usually you set \"language\" from the command line for these cases.\nlanguage = None\n# List of patterns, relative to source directory, that match files and\n# directories to ignore when looking for source files.\n# This pattern also affects html_static_path and html_extra_path .",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "language",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "language = None\n# List of patterns, relative to source directory, that match files and\n# directories to ignore when looking for source files.\n# This pattern also affects html_static_path and html_extra_path .\nexclude_patterns = [\"_build\", \"**.ipynb_checkpoints\"]\n# The name of the Pygments (syntax highlighting) style to use.\npygments_style = \"sphinx\"\n# -- Options for HTML output -------------------------------------------------\n# The theme to use for HTML and HTML Help pages.  See the documentation for\n# a list of builtin themes.",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "exclude_patterns",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "exclude_patterns = [\"_build\", \"**.ipynb_checkpoints\"]\n# The name of the Pygments (syntax highlighting) style to use.\npygments_style = \"sphinx\"\n# -- Options for HTML output -------------------------------------------------\n# The theme to use for HTML and HTML Help pages.  See the documentation for\n# a list of builtin themes.\n#\nhtml_theme = \"sphinx_rtd_theme\"\n# Theme options are theme-specific and customize the look and feel of a theme\n# further.  For a list of options available for each theme, see the",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "pygments_style",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "pygments_style = \"sphinx\"\n# -- Options for HTML output -------------------------------------------------\n# The theme to use for HTML and HTML Help pages.  See the documentation for\n# a list of builtin themes.\n#\nhtml_theme = \"sphinx_rtd_theme\"\n# Theme options are theme-specific and customize the look and feel of a theme\n# further.  For a list of options available for each theme, see the\n# documentation.\n#",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "html_theme = \"sphinx_rtd_theme\"\n# Theme options are theme-specific and customize the look and feel of a theme\n# further.  For a list of options available for each theme, see the\n# documentation.\n#\nhtml_theme_options = {\"collapse_navigation\": False, \"style_external_links\": True}\n# Add any paths that contain custom static files (such as style sheets) here,\n# relative to this directory. They are copied after the builtin static files,\n# so a file named \"default.css\" will overwrite the builtin \"default.css\".\nhtml_static_path = [\"_static\"]",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme_options",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "html_theme_options = {\"collapse_navigation\": False, \"style_external_links\": True}\n# Add any paths that contain custom static files (such as style sheets) here,\n# relative to this directory. They are copied after the builtin static files,\n# so a file named \"default.css\" will overwrite the builtin \"default.css\".\nhtml_static_path = [\"_static\"]\n# Custom sidebar templates, must be a dictionary that maps document names\n# to template names.\n#\n# The default sidebars (for documents that don't match any pattern) are\n# defined by theme itself.  Builtin themes are using these templates by",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_static_path",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "html_static_path = [\"_static\"]\n# Custom sidebar templates, must be a dictionary that maps document names\n# to template names.\n#\n# The default sidebars (for documents that don't match any pattern) are\n# defined by theme itself.  Builtin themes are using these templates by\n# default: ``['localtoc.html', 'relations.html', 'sourcelink.html',\n# 'searchbox.html']``.\n#\n# html_sidebars = {}",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_show_sourcelink",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "html_show_sourcelink = False\n# -- Options for HTMLHelp output ---------------------------------------------\n# Output file base name for HTML help builder.\nhtmlhelp_basename = \"ml_kedrodoc\"\n# -- Options for LaTeX output ------------------------------------------------\nlatex_elements = {\n    # The paper size ('letterpaper' or 'a4paper').\n    #\n    # 'papersize': 'letterpaper',\n    #",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "htmlhelp_basename",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "htmlhelp_basename = \"ml_kedrodoc\"\n# -- Options for LaTeX output ------------------------------------------------\nlatex_elements = {\n    # The paper size ('letterpaper' or 'a4paper').\n    #\n    # 'papersize': 'letterpaper',\n    #\n    # The font size ('10pt', '11pt' or '12pt').\n    #\n    # 'pointsize': '10pt',",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "latex_elements",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "latex_elements = {\n    # The paper size ('letterpaper' or 'a4paper').\n    #\n    # 'papersize': 'letterpaper',\n    #\n    # The font size ('10pt', '11pt' or '12pt').\n    #\n    # 'pointsize': '10pt',\n    #\n    # Additional stuff for the LaTeX preamble.",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "latex_documents",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "latex_documents = [\n    (\n        master_doc,\n        \"ml_kedro.tex\",\n        \"ml_kedro Documentation\",\n        \"Kedro\",\n        \"manual\",\n    )\n]\n# -- Options for manual page output ------------------------------------------",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "man_pages",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "man_pages = [\n    (\n        master_doc,\n        \"ml_kedro\",\n        \"ml_kedro Documentation\",\n        [author],\n        1,\n    )\n]\n# -- Options for Texinfo output ----------------------------------------------",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "texinfo_documents",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "texinfo_documents = [\n    (\n        master_doc,\n        \"ml_kedro\",\n        \"ml_kedro Documentation\",\n        author,\n        \"ml_kedro\",\n        \"Project ml_kedro codebase.\",\n        \"Data-Science\",\n    )",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "todo_include_todos",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "todo_include_todos = False\n# -- Extension configuration -------------------------------------------------\n# nbsphinx_prolog = \"\"\"\n# see here for prolog/epilog details:\n# https://nbsphinx.readthedocs.io/en/0.3.1/prolog-and-epilog.html\n# \"\"\"\n# -- NBconvert kernel config -------------------------------------------------\nnbsphinx_kernel_name = \"python3\"\ndef remove_arrows_in_examples(lines):\n    for i, line in enumerate(lines):",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "nbsphinx_kernel_name",
+        "kind": 5,
+        "importPath": "docs.source.conf",
+        "description": "docs.source.conf",
+        "peekOfCode": "nbsphinx_kernel_name = \"python3\"\ndef remove_arrows_in_examples(lines):\n    for i, line in enumerate(lines):\n        lines[i] = line.replace(\">>>\", \"\")\ndef autodoc_process_docstring(app, what, name, obj, options, lines):\n    remove_arrows_in_examples(lines)\ndef skip(app, what, name, obj, skip, options):\n    if name == \"__init__\":\n        return False\n    return skip",
+        "detail": "docs.source.conf",
+        "documentation": {}
+    },
+    {
+        "label": "register_pipelines",
+        "kind": 2,
+        "importPath": "src.ml_kedro.pipeline_registry",
+        "description": "src.ml_kedro.pipeline_registry",
+        "peekOfCode": "def register_pipelines() -> dict[str, Pipeline]:\n    \"\"\"Register the project's pipelines.\n    Returns:\n        A mapping from pipeline names to ``Pipeline`` objects.\n    \"\"\"\n    pipelines = find_pipelines()\n    pipelines[\"__default__\"] = sum(pipelines.values())\n    return pipelines",
+        "detail": "src.ml_kedro.pipeline_registry",
+        "documentation": {}
+    },
+    {
+        "label": "TestProjectContext",
+        "kind": 6,
+        "importPath": "src.tests.test_run",
+        "description": "src.tests.test_run",
+        "peekOfCode": "class TestProjectContext:\n    def test_project_path(self, project_context):\n        assert project_context.project_path == Path.cwd()",
+        "detail": "src.tests.test_run",
+        "documentation": {}
+    },
+    {
+        "label": "config_loader",
+        "kind": 2,
+        "importPath": "src.tests.test_run",
+        "description": "src.tests.test_run",
+        "peekOfCode": "def config_loader():\n    return ConfigLoader(conf_source=str(Path.cwd() / settings.CONF_SOURCE))\n@pytest.fixture\ndef project_context(config_loader):\n    return KedroContext(\n        package_name=\"ml_kedro\",\n        project_path=Path.cwd(),\n        config_loader=config_loader,\n        hook_manager=_create_hook_manager(),\n    )",
+        "detail": "src.tests.test_run",
+        "documentation": {}
+    },
+    {
+        "label": "project_context",
+        "kind": 2,
+        "importPath": "src.tests.test_run",
+        "description": "src.tests.test_run",
+        "peekOfCode": "def project_context(config_loader):\n    return KedroContext(\n        package_name=\"ml_kedro\",\n        project_path=Path.cwd(),\n        config_loader=config_loader,\n        hook_manager=_create_hook_manager(),\n    )\n# The tests below are here for the demonstration purpose\n# and should be replaced with the ones testing the project\n# functionality",
+        "detail": "src.tests.test_run",
+        "documentation": {}
+    },
+    {
+        "label": "entry_point",
+        "kind": 5,
+        "importPath": "src.setup",
+        "description": "src.setup",
+        "peekOfCode": "entry_point = (\n    \"ml-kedro = ml_kedro.__main__:main\"\n)\n# get the dependencies and installs\nwith open(\"requirements.txt\", encoding=\"utf-8\") as f:\n    # Make sure we strip all comments and options (e.g \"--extra-index-url\")\n    # that arise from a modified pip.conf file that configure global options\n    # when running kedro build-reqs\n    requires = []\n    for line in f:",
+        "detail": "src.setup",
+        "documentation": {}
+    }
+]
